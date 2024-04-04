@@ -12,6 +12,17 @@ const getTeams = async (req, res) => {
   }
 };
 
+// get one team
+const getOneTeam = async (req, res) => {
+  try {
+    const { team_id } = req.params;
+    const team = await Team.find({ team_id });
+    res.status(200).json(team);
+  } catch (error) {
+    res.status(500).send("Failed to fetch team: " + error.message);
+  }
+};
+
 // get players of certain team
 const getTeamPlayers = async (req, res) => {
   try {
@@ -25,5 +36,6 @@ const getTeamPlayers = async (req, res) => {
 
 module.exports = {
   getTeams,
+  getOneTeam,
   getTeamPlayers,
 };

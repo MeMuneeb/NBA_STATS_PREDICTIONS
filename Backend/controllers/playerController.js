@@ -11,6 +11,17 @@ const getAllPlayers = async (req, res) => {
   }
 };
 
+const getOnePlayer = async (req, res) => {
+  try {
+    const { player_id } = req.params;
+    const player = await Player.find({ player_id });
+    res.status(200).json(player);
+  } catch (error) {
+    res.status(500).send("Failed to fetch player: " + error.message);
+  }
+};
+
 module.exports = {
   getAllPlayers,
+  getOnePlayer,
 };

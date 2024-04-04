@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv").config({ path: "/Users/Muneeb1/Desktop/NBA_Stats/.env" });
 const express = require("express");
 const mongoose = require("mongoose");
 const teamRoutes = require("./routes/teams");
