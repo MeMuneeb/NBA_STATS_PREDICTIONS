@@ -18,18 +18,12 @@ def fetch_team_stats(team_id, client):
     players_df = pd.DataFrame(players_data)
 
     # Aggregate points for each team
-    team_points = players_df.groupby('team_id')['pts'].sum().reset_index()
+    team_points = players_df.groupby('team_id')['pts'].sum().reset_index() # Merge this with team data
 
-    # Merge this with your team data
-    # Note: This example assumes team statistics are already averaged or summed up properly and represent overall team performance
     team_stats_enriched = pd.merge(teams_df, team_points, on='team_id', how='left')
 
     team_stats = team_stats_enriched.loc[team_stats_enriched['team_id'] == team_id].iloc[0]
 
-
-    # teams = db['teams']
-    # players = db['players']
-    # team_data = teams.find_one({"team_id": team_id})
     return team_stats
 
 # Function to calculate differential stats for the matchup
@@ -58,20 +52,18 @@ def make_prediction(team1_id, team2_id):
     # Calculate differential stats
     input_features = calculate_differential_stats(team1_stats, team2_stats)
 
-    # Load the machine learning model
-    # Make prediction
+    # Load the machine learning models
     model_class = joblib.load('/Users/Muneeb1/Desktop/NBA_Stats/ml_model/nba_class_model.joblib')
     model_regr = joblib.load('/Users/Muneeb1/Desktop/NBA_Stats/ml_model/nba_regr_model.joblib')
 
-    # Make a prediction
+    # Make predictions
     prediction_class = model_class.predict(input_features)
     prediction_regr = model_regr.predict(input_features)    
     
     # Close the MongoDB connection
     client.close()
     
-    # Print the prediction result
-    # Interpret the prediction (based on your model's output)
+    # Print the prediction results
     if prediction_class == 1:
         print(f"{team1_stats['team_name']} is predicted to win.")
     else:
@@ -83,6 +75,6 @@ def make_prediction(team1_id, team2_id):
         print(f"The predicted score difference is: {int(abs(prediction_regr[0]))}")
 
 if __name__ == "__main__":
-    team1_id = int(sys.argv[1])  # Convert to int if your team IDs are integers
+    team1_id = int(sys.argv[1])  
     team2_id = int(sys.argv[2])
     make_prediction(team1_id, team2_id)
