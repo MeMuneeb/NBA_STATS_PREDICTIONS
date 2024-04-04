@@ -11,6 +11,7 @@ const getAllPlayers = async (req, res) => {
   }
 };
 
+// get one player
 const getOnePlayer = async (req, res) => {
   try {
     const { player_id } = req.params;
