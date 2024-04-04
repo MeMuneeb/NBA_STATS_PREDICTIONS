@@ -9,6 +9,7 @@ router.get("/", getTeams);
 // GET all players froma  certain team
 router.get("/:team_id/players", getTeamPlayers);
 
+// GET one team
 router.get("/:team_id", getOneTeam);
 
 module.exports = router;
