@@ -5,7 +5,7 @@ from pymongo import MongoClient, UpdateOne
 import os
 import dotenv
 from dotenv import load_dotenv
-load_dotenv()
+load_dotenv('../.env')
 
 
 headers = {'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) Version/9.0.2 Safari/601.3.9', 'Referer': 'https://www.nba.com/',}
