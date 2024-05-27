@@ -12,16 +12,36 @@ const teamSchema = new Schema(
       type: String,
       required: true,
     },
-    conference: {
-      type: String,
-      required: true,
-    },
     win_pct: {
       type: Number,
       required: true,
     },
-    conference_record: {
-      type: String,
+    fg_pct: {
+      type: Number,
+      required: true,
+    },
+    reb: {
+      type: Number,
+      required: true,
+    },
+    ast: {
+      type: Number,
+      required: true,
+    },
+    tov: {
+      type: Number,
+      required: true,
+    },
+    stl: {
+      type: Number,
+      required: true,
+    },
+    blk: {
+      type: Number,
+      required: true,
+    },
+    plus_minus: {
+      type: Number,
       required: true,
     },
   },
