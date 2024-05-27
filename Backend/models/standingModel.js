@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const teamSchema = new Schema(
+const standingSchema = new Schema(
   {
     team_id: {
       type: Number,
@@ -24,8 +24,24 @@ const teamSchema = new Schema(
       type: String,
       required: true,
     },
+    gb: {
+      type: Number,
+      required: true,
+    },
+    home: {
+      type: String,
+      required: true,
+    },
+    road: {
+      type: String,
+      required: true,
+    },
+    last10: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: false }
 );
 
-module.exports = mongoose.model("Team", teamSchema);
+module.exports = mongoose.model("Standing", standingSchema);
