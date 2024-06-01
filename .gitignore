@@ -1,5 +1,8 @@
 *.env
 
+**/frontend/package-lock.json
+**/frontend/package.json
+
 # dependencies
 **/node_modules
 /.pnp
