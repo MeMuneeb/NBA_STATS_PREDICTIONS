@@ -1,0 +1,38 @@
+.predictor {
+  padding: 20px;
+  background-color: #f5f5f5;
+  color: #333;
+  text-align: center;
+}
+
+.predictor h2 {
+  color: rgb(63, 97, 220);
+}
+
+.predictor select {
+  padding: 8px;
+  margin-right: 10px;
+  background-color: rgb(66, 135, 245);
+  color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.predictor button {
+  padding: 8px 16px;
+  background-color: rgb(63, 97, 220);
+  color: #f5f5f5;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.predictor button:hover {
+  background-color: rgb(195, 73, 67);
+}
+
+.predictor h4 {
+  margin-top: 20px;
+}
