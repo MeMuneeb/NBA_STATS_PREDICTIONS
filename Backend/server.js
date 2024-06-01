@@ -5,10 +5,12 @@ const teamRoutes = require("./routes/teams");
 const playerRoutes = require("./routes/players");
 const predictionRoutes = require("./routes/predictions");
 const standingRoutes = require("./routes/standings");
+const cors = require("cors");
 
 // express app
 const app = express();
 
+app.use(cors());
 // middleware
 app.use(express.json());
 

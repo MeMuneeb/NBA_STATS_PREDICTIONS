@@ -4,7 +4,7 @@ const { spawn } = require("child_process");
 const getPrediction = async (req, res) => {
   try {
     const { team1_id, team2_id } = req.body;
-
+    console.log(team1_id);
     //  Spawns a Python process to run the predict.py script, passing in team IDs as arguments
     const pythonProcess = spawn("python", [
       "/Users/Muneeb1/Desktop/NBA_Stats/ml_model/predict.py",

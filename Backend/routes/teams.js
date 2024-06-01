@@ -6,10 +6,10 @@ const { getTeams, getOneTeam, getTeamPlayers } = require("../controllers/teamCon
 // GET all teams
 router.get("/", getTeams);
 
-// GET all players froma  certain team
-router.get("/:team_id/players", getTeamPlayers);
+// GET all players from a  certain team
+router.get("/:team_id", getTeamPlayers);
 
-// GET one team
-router.get("/:team_id", getOneTeam);
+// // GET one team
+// router.get("/:team_id", getOneTeam);
 
 module.exports = router;
