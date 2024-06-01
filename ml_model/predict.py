@@ -5,7 +5,7 @@ from pymongo import MongoClient
 import os
 import dotenv
 from dotenv import load_dotenv
-load_dotenv()
+load_dotenv('../.env')
 
 # Function to fetch team stats by ID
 def fetch_team_stats(team_id, client):
